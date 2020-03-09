@@ -8,6 +8,8 @@
 
 数据库文件位置 >> https://github.com/2020NCOV/ncov-report/tree/master/database
 
+commit前如何与上游仓库同步？>> [本地及远程仓库如何与上游仓库保持一致](https://github.com/msq0313/MiniProgram-server-JAVA/blob/master/Git_tour.md)
+
 ## 项目结构
 
 #### （1）代码层的结构
@@ -41,3 +43,6 @@
 　　　　2.国际化(i18n))置于i18n文件夹下
 
 　　　　3.spring.xml置于META-INF/spring文件夹下
+
+　　　　4.页面以及js/css/image等置于static文件夹下的各自文件下
+
