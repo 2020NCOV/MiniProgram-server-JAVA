@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="miniprogram.server.mapper.WxMpUserMapper" >
+  <resultMap id="BaseResultMap" type="miniprogram.server.beans.WxMpUser" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="wid" property="wid" jdbcType="INTEGER" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="token" property="token" jdbcType="VARCHAR" />
+    <result column="time_out" property="timeOut" jdbcType="INTEGER" />
+    <result column="session_key" property="sessionKey" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="avatar_url" property="avatarUrl" jdbcType="VARCHAR" />
+    <result column="login_time" property="loginTime" jdbcType="VARCHAR" />
+    <result column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="phone_num" property="phoneNum" jdbcType="VARCHAR" />
+    <result column="reg_date" property="regDate" jdbcType="DATE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>

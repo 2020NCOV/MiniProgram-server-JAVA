@@ -10,19 +10,27 @@
 
 commit前如何与上游仓库同步？>> [本地及远程仓库如何与上游仓库保持一致](https://github.com/msq0313/MiniProgram-server-JAVA/blob/master/Git_tour.md)
 
+## 项目导航
+
+[MiniProgram-server-JAVA](#MiniProgram-server-JAVA)
+
+- [项目导航](#项目导航)
+- [项目结构](#项目结构)
+- [本地配置](#本地配置)
+
 ## 项目结构
 
 #### （1）代码层的结构
 
 ##### 　　根目录：src/main/java/miniprogram/server
 
-　　　　1.工程启动类(ApplicationServer.java)置于miniprogram.server.build包下
+　　　　1.工程启动类(ServerApplication.java)置于miniprogram.server
 
-　　　　2.实体类(domain)置于miniprogram.server.domain
+　　　　2.实体类(Beans)置于miniprogram.server.beans
 
-　　　　3.数据访问层(Dao)置于miniprogram.server.repository
+　　　　3.数据访问层(Mapper)置于miniprogram.server.mapper
 
-　　　　4.数据服务层(Service)置于miniprogram.server.service,数据服务的实现接口(serviceImpl)至于miniprogram.server.service.impl
+　　　　4.数据服务层(Service)置于miniprogram.server.service
 
 　　　　5.前端控制器(Controller)置于miniprogram.server.controller
 
@@ -46,3 +54,32 @@ commit前如何与上游仓库同步？>> [本地及远程仓库如何与上游�
 
 　　　　4.页面以及js/css/image等置于static文件夹下的各自文件下
 
+## 本地配置
+
+### 1.导入IDEA
+
+IDE根据pom.xml自动导入依赖
+
+### 2.修改配置文件
+
+src/main/resources/application.properties
+
+~~~
+# 根据项目情况修改
+
+# 配置api端口号
+
+server.port=8080
+
+# 连接数据库
+
+spring.datasource.url=jdbc:mysql://localhost:3306/数据库名?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+spring.datasource.username=数据库用户名名
+spring.datasource.password=数据库密码
+~~~
+
+### 3.运行ServerApplication
+
+浏览器中输入http://localhost:8080/index
+
+返回 MiniProgram-server-JAVA 即成功运行

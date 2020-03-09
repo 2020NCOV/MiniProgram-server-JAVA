@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="miniprogram.server.mapper.OrgUserInfoCompanyMapper" >
+  <resultMap id="BaseResultMap" type="miniprogram.server.beans.OrgUserInfoCompany" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cor_id" property="corId" jdbcType="INTEGER" />
+    <result column="cor_name" property="corName" jdbcType="VARCHAR" />
+    <result column="userID" property="userid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="school" property="school" jdbcType="VARCHAR" />
+    <result column="grade" property="grade" jdbcType="VARCHAR" />
+    <result column="source_place" property="sourcePlace" jdbcType="VARCHAR" />
+    <result column="telphone" property="telphone" jdbcType="VARCHAR" />
+    <result column="is_left_bj" property="isLeftBj" jdbcType="VARCHAR" />
+    <result column="left_date" property="leftDate" jdbcType="VARCHAR" />
+    <result column="left_transport" property="leftTransport" jdbcType="VARCHAR" />
+    <result column="left_transport_info" property="leftTransportInfo" jdbcType="VARCHAR" />
+    <result column="goto_hubei" property="gotoHubei" jdbcType="VARCHAR" />
+    <result column="goto_hubei_date1" property="gotoHubeiDate1" jdbcType="VARCHAR" />
+    <result column="goto_hubei_date2" property="gotoHubeiDate2" jdbcType="VARCHAR" />
+    <result column="goto_hubei_info" property="gotoHubeiInfo" jdbcType="VARCHAR" />
+    <result column="is_touch_hubei_person" property="isTouchHubeiPerson" jdbcType="VARCHAR" />
+    <result column="touch_hubei_date1" property="touchHubeiDate1" jdbcType="VARCHAR" />
+    <result column="touch_hubei_date2" property="touchHubeiDate2" jdbcType="VARCHAR" />
+    <result column="is_return" property="isReturn" jdbcType="VARCHAR" />
+    <result column="return_date" property="returnDate" jdbcType="VARCHAR" />
+    <result column="return_transport" property="returnTransport" jdbcType="VARCHAR" />
+    <result column="return_transport_info" property="returnTransportInfo" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="agent" property="agent" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>
