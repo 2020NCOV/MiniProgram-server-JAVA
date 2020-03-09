@@ -12,7 +12,7 @@
 
 #### （1）代码层的结构
 
-##### 　　根目录：src/miniprogram/server
+##### 　　根目录：src/main/java/miniprogram/server
 
 　　　　1.工程启动类(ApplicationServer.java)置于miniprogram.server.build包下
 
@@ -34,7 +34,7 @@
 
 #### （2）资源文件的结构
 
-##### 　　根目录:src/main/resources
+##### 　　根目录：src/main/resources
 
 　　　　1.配置文件(.yaml/.json等)置于config文件夹下
 
