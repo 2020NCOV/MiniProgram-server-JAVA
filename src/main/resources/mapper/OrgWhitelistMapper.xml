@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="miniprogram.server.mapper.OrgWhitelistMapper" >
+  <resultMap id="BaseResultMap" type="miniprogram.server.beans.OrgWhitelist" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="org_id" property="orgId" jdbcType="INTEGER" />
+    <result column="userID" property="userid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="sub1_department_id" property="sub1DepartmentId" jdbcType="INTEGER" />
+    <result column="sub2_department_id" property="sub2DepartmentId" jdbcType="INTEGER" />
+    <result column="tag1" property="tag1" jdbcType="VARCHAR" />
+    <result column="tag2" property="tag2" jdbcType="VARCHAR" />
+    <result column="tag3" property="tag3" jdbcType="VARCHAR" />
+    <result column="tag4" property="tag4" jdbcType="VARCHAR" />
+    <result column="add_datetime" property="addDatetime" jdbcType="TIMESTAMP" />
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="add_remark" property="addRemark" jdbcType="VARCHAR" />
+    <result column="dep_name" property="depName" jdbcType="VARCHAR" />
+    <result column="report_id" property="reportId" jdbcType="INTEGER" />
+    <result column="report_date" property="reportDate" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="miniprogram.server.mapper.ReportRecordCompanyMapper" >
+  <resultMap id="BaseResultMap" type="miniprogram.server.beans.ReportRecordCompany" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="wxuid" property="wxuid" jdbcType="INTEGER" />
+    <result column="org_id" property="orgId" jdbcType="INTEGER" />
+    <result column="org_name" property="orgName" jdbcType="VARCHAR" />
+    <result column="userID" property="userid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="is_return_school" property="isReturnSchool" jdbcType="INTEGER" />
+    <result column="return_dorm_num" property="returnDormNum" jdbcType="VARCHAR" />
+    <result column="return_time" property="returnTime" jdbcType="DATE" />
+    <result column="return_district_value" property="returnDistrictValue" jdbcType="INTEGER" />
+    <result column="return_district_path" property="returnDistrictPath" jdbcType="VARCHAR" />
+    <result column="return_traffic_info" property="returnTrafficInfo" jdbcType="VARCHAR" />
+    <result column="current_district_value" property="currentDistrictValue" jdbcType="INTEGER" />
+    <result column="current_district_path" property="currentDistrictPath" jdbcType="VARCHAR" />
+    <result column="current_health_value" property="currentHealthValue" jdbcType="INTEGER" />
+    <result column="current_contagion_risk_value" property="currentContagionRiskValue" jdbcType="INTEGER" />
+    <result column="current_temperature" property="currentTemperature" jdbcType="REAL" />
+    <result column="psy_status" property="psyStatus" jdbcType="INTEGER" />
+    <result column="psy_demand" property="psyDemand" jdbcType="INTEGER" />
+    <result column="psy_knowledge" property="psyKnowledge" jdbcType="INTEGER" />
+    <result column="return_company_date" property="returnCompanyDate" jdbcType="VARCHAR" />
+    <result column="plan_company_date" property="planCompanyDate" jdbcType="VARCHAR" />
+    <result column="template_code" property="templateCode" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>
