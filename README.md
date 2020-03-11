@@ -82,4 +82,20 @@ spring.datasource.password=数据库密码
 
 浏览器中输入http://localhost:8080/index
 
-返回 MiniProgram-server-JAVA 即成功运行
+可返回 MiniProgram-server-JAVA 即成功运行
+
+### 4.小程序联调
+
+打开小程序开发工具，导入项目
+
+小程序项目地址：https://github.com/2020NCOV/ncov-report-mini-program-server
+
+修改小程序端的baseURL,在/ncov-report-mini-program/util/config.js文件中
+
+~~~
+const baseURL = 'http://127.0.0.1:8080/index'; //这表示小程序访问的是本机的8080端口，正是后端程序监听的端口
+~~~
+
+- 编译运行小程序
+- 打开调试器，点击network
+- 查看小程序发出的请求getcode，如果返回status code是200ok则表示前后端通信成功，并可查看response内容
