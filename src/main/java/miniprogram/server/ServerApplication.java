@@ -6,7 +6,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
 //扫描 mybatis mapper 包路径
-@MapperScan(basePackages = "miniprogram.server.mapper")
+@MapperScan(basePackages = {"miniprogram.server.mapper", "miniprogram.server.beans"})
 public class ServerApplication {
 
     public static void main(String[] args) {
