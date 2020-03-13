@@ -14,4 +14,45 @@
     <result column="unbind_date" property="unbindDate" jdbcType="TIMESTAMP" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
+
+  <select id="selectByOrgId" resultType="miniprogram.server.beans.Organization">
+    select o.id, o.corpname, o.corp_code from wx_mp_bind_info w left join organization o on w.org_id = o.id where w.wx_uid = #{wxUid} and w.isbind = 1
+  </select>
+
+  <select id="selectByOrgIdAndUid" resultMap="BaseResultMap">
+    select * from wx_mp_bind_info where wx_uid = #{wxUid} and org_id = #{orgId} and isbind = 1
+  </select>
+
+  <select id="isBindByParam" resultMap="BaseResultMap">
+    select * from wx_mp_bind_info where wx_uid = #{wxUid} and org_id = #{orgId} and username = #{userid} and isbind = 1
+  </select>
+
+  <select id="select" resultMap="BaseResultMap" parameterType="miniprogram.server.beans.WxMpBindInfo">
+    select * from wx_mp_bind_info where 1=1
+     <if test="wxUid != null">
+       and wx_uid = #{wxUid}
+     </if>
+      <if test="orgId != null">
+        and org_id = #{orgId}
+      </if>
+      <if test="username != null">
+        and username = #{username}
+      </if>
+      <if test="isbind != null">
+        and isbind = #{isbind}
+      </if>
+  </select>
+
+  <update id="updateStatus">
+    update wx_mp_bind_info set isbind = 0, unbind_date = now() where wx_uid = #{wxUid}
+  </update>
+
+  <insert id="insert" parameterType="miniprogram.server.beans.WxMpBindInfo">
+    insert into wx_mp_bind_info(org_id, wx_uid, username, isbind)
+    values (#{wxUid, jdbcType=VARCHAR},
+            #{orgId, jdbcType=VARCHAR},
+            #{userid, jdbcType=INTEGER},
+            #{isbind, jdbcType=INTEGER})
+  </insert>
+
 </mapper>

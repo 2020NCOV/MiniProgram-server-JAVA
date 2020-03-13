@@ -5,13 +5,13 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="wid" property="wid" jdbcType="INTEGER" />
-    <result column="openid" property="openid" jdbcType="VARCHAR" />
-    <result column="token" property="token" jdbcType="VARCHAR" />
-    <result column="time_out" property="timeOut" jdbcType="INTEGER" />
-    <result column="session_key" property="sessionKey" jdbcType="VARCHAR" />
-    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
-    <result column="gender" property="gender" jdbcType="VARCHAR" />
+      <id column="wid" property="wid" jdbcType="INTEGER" />
+      <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+      <result column="openid" property="openid" jdbcType="VARCHAR" />
+      <result column="token" property="token" jdbcType="VARCHAR" />
+      <result column="time_out" property="timeOut" jdbcType="INTEGER" />
+      <result column="session_key" property="sessionKey" jdbcType="VARCHAR" />
+      <result column="gender" property="gender" jdbcType="VARCHAR" />
     <result column="city" property="city" jdbcType="VARCHAR" />
     <result column="avatar_url" property="avatarUrl" jdbcType="VARCHAR" />
     <result column="login_time" property="loginTime" jdbcType="VARCHAR" />
@@ -21,4 +21,35 @@
     <result column="reg_date" property="regDate" jdbcType="DATE" />
     <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
+
+  <select id="selectByOpenId" resultMap="BaseResultMap">
+    select * from wx_mp_user where openid = #{openid}
+  </select>
+
+    <select id="selectByWid" resultMap="BaseResultMap">
+    select * from wx_mp_user where wid = #{wid}
+  </select>
+
+  <insert id="insert" parameterType="miniprogram.server.beans.WxMpUser">
+    insert into wx_mp_user(openid, token, time_out, session_key, nickname, gender, city, avatar_url, login_time, userid, name, phone_num, reg_date, status)
+    values (#{openid, jdbcType=VARCHAR},
+            #{token, jdbcType=VARCHAR},
+            #{timeOut, jdbcType=INTEGER},
+            #{sessionKey, jdbcType=VARCHAR},
+            #{nickname, jdbcType=VARCHAR},
+            #{gender, jdbcType=VARCHAR},
+            #{city, jdbcType=VARCHAR},
+            #{avatarUrl, jdbcType=VARCHAR},
+            #{loginTime, jdbcType=VARCHAR},
+            #{userid, jdbcType=VARCHAR},
+            #{name, jdbcType=VARCHAR},
+            #{phoneNum, jdbcType=VARCHAR},
+            #{regDate, jdbcType=DATE},
+            #{status, jdbcType=INTEGER})
+  </insert>
+
+    <update id="update" parameterType="miniprogram.server.beans.WxMpUser">
+        update wx_mp_user set userid = #{userid}, name = #{name} ,phone_num = #{phoneNum}  where wid = #{wid}
+    </update>
+
 </mapper>

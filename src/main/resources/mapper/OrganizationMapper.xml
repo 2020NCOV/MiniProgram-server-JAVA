@@ -20,4 +20,8 @@
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="add_date" property="addDate" jdbcType="TIMESTAMP" />
   </resultMap>
+
+  <select id="selectByCorpCode" resultMap="BaseResultMap">
+    select * from organization where corp_code = #{corpCode}
+  </select>
 </mapper>
