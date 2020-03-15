@@ -19,4 +19,5 @@ public interface WxMpBindInfoMapper{
 
     WxMpBindInfo select(@RequestBody WxMpBindInfo wxMpBindInfo);
 
+    void insert(WxMpBindInfo wxMpBindInfo);
 }
