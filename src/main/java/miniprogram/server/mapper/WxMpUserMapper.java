@@ -15,4 +15,5 @@ public interface WxMpUserMapper{
 
     void update(WxMpUser wxMpUser);
 
+    WxMpUser selectByUserid(@Param("userid") String userid);
 }

@@ -36,4 +36,11 @@ public class WxMpBindInfoService {
         wxMpBindInfoMapper.updateStatus(wxUid);
     }
 
+    public void insert(WxMpBindInfo wxMpBindInfo) {
+        wxMpBindInfoMapper.insert(wxMpBindInfo);
+    }
+
+    public void update(WxMpBindInfo wxMpBindInfo) {
+        wxMpBindInfoMapper.insert(wxMpBindInfo);
+    }
 }

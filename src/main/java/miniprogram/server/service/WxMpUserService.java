@@ -38,4 +38,7 @@ public class WxMpUserService {
         wxMpUserMapper.update(wxMpUser);
     }
 
+    public WxMpUser selectByUserid(String userid){
+        return wxMpUserMapper.selectByUserid(userid);
+    }
 }

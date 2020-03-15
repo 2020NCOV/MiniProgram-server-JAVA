@@ -30,6 +30,10 @@
     select * from wx_mp_user where wid = #{wid}
   </select>
 
+    <select id="selectByUserid" resultMap="BaseResultMap">
+    select * from wx_mp_user where userid = #{userid}
+  </select>
+
   <insert id="insert" parameterType="miniprogram.server.beans.WxMpUser">
     insert into wx_mp_user(openid, token, time_out, session_key, nickname, gender, city, avatar_url, login_time, userid, name, phone_num, reg_date, status)
     values (#{openid, jdbcType=VARCHAR},
