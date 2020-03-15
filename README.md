@@ -78,13 +78,22 @@ spring.datasource.username=数据库用户名名
 spring.datasource.password=数据库密码
 ~~~
 
-### 3.运行ServerApplication
+### 3.配置小程序参数
+
+目前变量位置在：controller/LoginController，以后会加入到配置文件中。
+
+~~~
+String appid  = "自己的小程序appid";
+String secret = "自己的小程序secret";
+~~~
+
+### 4.运行ServerApplication
 
 浏览器中输入http://localhost:8080/index
 
 可返回 MiniProgram-server-JAVA 即成功运行
 
-### 4.小程序联调
+### 5.小程序联调
 
 打开小程序开发工具，导入项目
 
@@ -99,3 +108,8 @@ const baseURL = 'http://127.0.0.1:8080/index'; //这表示小程序访问的是�
 - 编译运行小程序
 - 打开调试器，点击network
 - 查看小程序发出的请求getcode，如果返回status code是200ok则表示前后端通信成功，并可查看response内容
+- 可正常进行注册登录，解绑信息等操作。
+
+
+
+**目前已实现大部分接口，getall接口（获取数据库城市列表并返回）未实现。项目开发仍在进行，各接口仍需完善，欢迎朋友们共同参与开发！**
