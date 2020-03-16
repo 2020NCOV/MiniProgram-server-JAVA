@@ -1,6 +1,8 @@
 package miniprogram.server.service;
 
+
 public interface AllService {
 
-    public void getcode();
+    //考虑在此形成Service方法列表
+
 }

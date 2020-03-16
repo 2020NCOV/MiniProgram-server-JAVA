@@ -7,6 +7,7 @@ import miniprogram.server.beans.WxMpUser;
 import miniprogram.server.service.OrganizationService;
 import miniprogram.server.service.WxMpBindInfoService;
 import miniprogram.server.service.WxMpUserService;
+import miniprogram.server.utils.PropertiesUtil;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -29,19 +30,16 @@ public class LoginController {
     @Autowired
     WxMpBindInfoService wxMpBindInfoService;
 
-//    @Autowired
-//    private AllService allService;
 
     @PostMapping(value = "getcode")
     public JSONObject getCode(String code, String corpid, String type) {
         System.out.println("method----------------------getCode");
-
-        String appid  = "";
-        String secret = "";
-
+        String appid  = PropertiesUtil.getValue("APPID");
+        String secret = PropertiesUtil.getValue("SECRET");
+        System.out.println(appid);
+        System.out.println(secret);
         String getTokenUrl = "https://api.weixin.qq.com/cgi-bin/token?appid=" + appid + "&secret=" + secret + "&grant_type=client_credential";
         JSONObject tokenJO = doGetRequest(getTokenUrl);
-
         String getOpenIDUrl = "https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=" + secret + "&js_code=" + code + "&grant_type=authorization_code";
         JSONObject openIDJO = doGetRequest(getOpenIDUrl);
 
@@ -80,7 +78,7 @@ public class LoginController {
             param.setWxUid(uid);
             param.setOrgId(corpid);
             param.setIsbind(1);
-            WxMpBindInfo wxMpBindInfo = wxMpBindInfoService.select(param);
+            WxMpBindInfo wxMpBindInfo = wxMpBindInfoService.mySelect(param);
             if (wxMpBindInfo != null) {
                 data.put("is_registered", 1);
             } else {
@@ -123,6 +121,7 @@ public class LoginController {
             data.put("template_code", organization.getTemplateCode());
             data.put("type_corpname", organization.getTypeCorpname());
             data.put("type_username", organization.getTypeUsername());
+            data.put("depid", organization.getId());
         } else {
             data.put("errcode", 1);
             data.put("msg", "查无数据");
@@ -156,7 +155,7 @@ public class LoginController {
             param.setOrgId(corpid);
             param.setUsername(userid);
             param.setIsbind(1);
-            WxMpBindInfo result = wxMpBindInfoService.select(param);
+            WxMpBindInfo result = wxMpBindInfoService.mySelect(param);
             if (result != null) {
                 if (result.getIsbind() == 0) {
                     data.put("errcode", 0);
@@ -185,6 +184,7 @@ public class LoginController {
     }
 
     /**
+     * 目前没用到此方法
      * uid: app.globalData.uid,
      * token: app.globalData.token,
      * corpid: that.data.corpid,
@@ -206,7 +206,7 @@ public class LoginController {
         WxMpBindInfo param = new WxMpBindInfo();
         param.setUsername(userid);
         param.setIsbind(1);
-        WxMpBindInfo checkIsBind = wxMpBindInfoService.select(param);
+        WxMpBindInfo checkIsBind = wxMpBindInfoService.mySelect(param);
         if (checkIsBind == null) {
             Date date = new Date();
             System.out.println(date);
@@ -249,7 +249,7 @@ public class LoginController {
         param.setOrgId(corpid);
         param.setUsername(userid);
         param.setIsbind(1);
-        WxMpBindInfo check = wxMpBindInfoService.select(param);
+        WxMpBindInfo check = wxMpBindInfoService.mySelect(param);
 
         if (check != null) {
             data.put("errcode", 0);
@@ -258,7 +258,7 @@ public class LoginController {
         } else {
             param.setOrgId(null);
             //此处检查一个微信，只能绑定一个企业
-            WxMpBindInfo wxMpBindInfo2 = wxMpBindInfoService.select(param);
+            WxMpBindInfo wxMpBindInfo2 = wxMpBindInfoService.mySelect(param);
             if (wxMpBindInfo2 != null) {
                 data.put("errcode", 100020);
                 data.put("is_registered", "本微信已经绑定其他机构，不能重复绑定");

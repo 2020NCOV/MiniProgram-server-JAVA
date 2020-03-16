@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Mapper
-public interface WxMpBindInfoMapper{
+public interface WxMpBindInfoMapper {
 
-    Organization selectByOrgId(@Param("wxUid") Integer wxUid);
+    Organization selectByUserId(@Param("wxUid") Integer wxUid);
 
     WxMpBindInfo selectByOrgIdAndUid(@Param("wxUid") Integer wxUid, @Param("orgId") String orgId);
 
@@ -17,7 +17,7 @@ public interface WxMpBindInfoMapper{
 
     void updateStatus(@Param("wxUid") Integer wxUid);
 
-    WxMpBindInfo select(@RequestBody WxMpBindInfo wxMpBindInfo);
+    WxMpBindInfo mySelect(@RequestBody WxMpBindInfo wxMpBindInfo);
 
     void insert(WxMpBindInfo wxMpBindInfo);
 }

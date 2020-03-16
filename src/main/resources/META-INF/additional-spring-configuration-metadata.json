@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "APPID",
+      "type": "java.lang.String",
+      "description": "Description for APPID."
+    },
+    {
+      "name": "SECRET",
+      "type": "java.lang.String",
+      "description": "Description for SECRET."
+    }
+  ] }
