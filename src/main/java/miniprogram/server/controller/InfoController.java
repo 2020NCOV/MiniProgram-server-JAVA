@@ -51,7 +51,7 @@ public class InfoController {
 
         Organization organization = organizationService.selectByCorpCode(corpid);
         if (organization != null) {
-            Organization bindOrg = wxMpBindInfoService.selectByOrgId(uid);
+            Organization bindOrg = wxMpBindInfoService.selectByUserId(uid);
             if (bindOrg == null) {
                 data.put("errcode", 1005);
                 data.put("msg", "获取用户绑定信息失败，未绑定任何机构!");

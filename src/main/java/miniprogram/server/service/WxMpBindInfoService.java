@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class WxMpBindInfoService {
@@ -16,8 +18,8 @@ public class WxMpBindInfoService {
     @Autowired
     WxMpBindInfoMapper wxMpBindInfoMapper;
 
-    public Organization selectByOrgId(Integer wxUid){
-        return wxMpBindInfoMapper.selectByOrgId(wxUid);
+    public Organization selectByUserId(Integer wxUid){
+        return wxMpBindInfoMapper.selectByUserId(wxUid);
     }
 
     public WxMpBindInfo selectByOrgIdAndUid(Integer wxUid, String orgId){
@@ -28,8 +30,8 @@ public class WxMpBindInfoService {
         return wxMpBindInfoMapper.isBindByParam(wxUid, orgId, userId);
     }
 
-    public WxMpBindInfo select(WxMpBindInfo wxMpBindInfo){
-        return wxMpBindInfoMapper.select(wxMpBindInfo);
+    public WxMpBindInfo mySelect(WxMpBindInfo wxMpBindInfo){
+        return wxMpBindInfoMapper.mySelect(wxMpBindInfo);
     }
 
     public void updateStatus(Integer wxUid){

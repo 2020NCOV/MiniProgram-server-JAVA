@@ -15,7 +15,7 @@
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
 
-  <select id="selectByOrgId" resultType="miniprogram.server.beans.Organization">
+  <select id="selectByUserId" resultType="miniprogram.server.beans.Organization">
     select o.id, o.corpname, o.corp_code from wx_mp_bind_info w left join organization o on w.org_id = o.corp_code where w.wx_uid = #{wxUid} and w.isbind = 1
   </select>
 
@@ -27,7 +27,7 @@
     select * from wx_mp_bind_info where wx_uid = #{wxUid} and org_id = #{orgId} and username = #{userid} and isbind = 1
   </select>
 
-  <select id="select" resultMap="BaseResultMap" parameterType="miniprogram.server.beans.WxMpBindInfo">
+  <select id="mySelect" resultMap="BaseResultMap" parameterType="miniprogram.server.beans.WxMpBindInfo">
     select * from wx_mp_bind_info where 1=1
      <if test="wxUid != null">
        and wx_uid = #{wxUid}

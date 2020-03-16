@@ -31,4 +31,9 @@
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
     <result column="time" property="time" jdbcType="TIMESTAMP" />
   </resultMap>
+
+  <select id="selectLastByName" resultMap="BaseResultMap">
+    select * from report_record_default where name = #{name} order by id DESC limit 1
+  </select>
+
 </mapper>
