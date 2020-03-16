@@ -38,3 +38,15 @@ git rebase upstream/master（master或其他分支名）
 git push
 ~~~
 
+##### 6.为自己的变化添加提示
+
+~~~
+git commit -m "message"
+~~~
+
+##### 7.将工作时的全部变化存储到暂存区(记得一定要在.前打上空格)
+
+~~~
+git add .
+~~~
+
