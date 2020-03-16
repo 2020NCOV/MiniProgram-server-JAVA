@@ -80,11 +80,11 @@ spring.datasource.password=数据库密码
 
 ### 3.配置小程序参数
 
-目前变量位置在：controller/LoginController，以后会加入到配置文件中。
+src/main/resources/application.properties
 
 ~~~
-String appid  = "自己的小程序appid";
-String secret = "自己的小程序secret";
+APPID  = 自己的小程序appid（注意没有双引号）
+SECRET = 自己的小程序secret（注意没有双引号）
 ~~~
 
 ### 4.运行ServerApplication
@@ -112,4 +112,4 @@ const baseURL = 'http://127.0.0.1:8080/index'; //这表示小程序访问的是�
 
 
 
-**目前已实现大部分接口，getall接口（获取数据库城市列表并返回）未实现。项目开发仍在进行，各接口仍需完善，欢迎朋友们共同参与开发！**
+**项目已经可以正常运行，但存在bug，且各接口仍需完善（如安全性问题），欢迎朋友们共同参与开发！**
