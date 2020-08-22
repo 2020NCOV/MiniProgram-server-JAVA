@@ -52,4 +52,10 @@ git commit -m "message"
 ~~~
 git add .
 ~~~
+##### 3.将工作时的全部变化缓存
+~~~
+git stash
+~~~
+
+
 
